@@ -1,2 +1,14 @@
-<h1>Home</h1>
-<p>This is the home page for my first Ruby on Rails application.</p>
+<div class="center jumbotron">
+  <h1>Welcome to the My First Riby on Rails Application</h1>
+
+  <h2>
+    This is the home page for the
+    <a href="http://www.railstutorial.org/">Ruby on Rails</a>
+    application.
+  </h2>
+
+  <%= link_to "Ping me now!", '#', class: "btn btn-lg btn-primary" %>
+</div>
+
+<%= link_to image_tag("rails.png", alt: "Rails logo"),
+            'http://rubyonrails.org/' %>
