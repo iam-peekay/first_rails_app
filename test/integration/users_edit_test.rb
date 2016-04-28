@@ -55,5 +55,11 @@ class UsersEditTest < ActionDispatch::IntegrationTest
       @user.reload
       assert_equal name, @user.name
       assert_equal email, @user.email
+      get login_path
+      assert_template 'sessions/new'
+      post login_path, session: { email: @user.email, password: 'password' }
+      assert is_logged_in?
+      assert_redirected_to @user
+      assert_nil session[:forwarding_url]
     end
 end
